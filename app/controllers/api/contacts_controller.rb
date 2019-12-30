@@ -19,6 +19,17 @@ class Api::ContactsController < ApplicationController
     end
   end
 
+  def update
+    @contact = Contact.find(params[:id])
+
+    if @contact.update(contact_params)
+      render json: @contact
+    else
+      render error: {error: 'Unable to update contact'}
+    end
+  end
+
+
   private
 
   def contact_params
