@@ -5,4 +5,4 @@
 - `rails db:migrate`
 - `rails db:seed`
 - `rails server`
-- create contact `./create.sh`
+- run create, update and destroy scripts eg. `./create.sh`
