@@ -6,7 +6,7 @@ class Api::ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
-    render json: @contact
+    render json: @contact, :include => [:emails]
   end
 
   def create
