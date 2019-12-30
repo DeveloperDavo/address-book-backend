@@ -5,7 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-json = ActiveSupport::JSON.decode(File.read('db/seeds/contacts.json'))
-json.each do |record|
-  Contact.create!(record)
+Email.delete_all
+Contact.delete_all
+
+hash = ActiveSupport::JSON.decode(File.read('db/seeds/contacts.json'))
+
+hash.each do |contact_entry|
+  contact = Contact.create!("first_name": contact_entry["first_name"])
+
+  contact_entry['emails'].each do |email_entry|
+    contact.emails.create!(email_entry)
+  end
+
 end

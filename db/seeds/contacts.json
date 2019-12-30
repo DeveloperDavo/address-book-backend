@@ -1,8 +1,27 @@
 [
   {
-    "first_name": "Alice"
+    "first_name": "Alice",
+    "emails": [
+      {
+        "account": "alice_work@mail.com",
+        "kind": "work",
+        "default": false
+      },
+      {
+        "account": "alice@mail.com",
+        "kind": "private",
+        "default": true
+      }
+    ]
   },
   {
-    "first_name": "Bob"
+    "first_name": "Bob",
+    "emails": [
+      {
+        "account": "bob@mail.com",
+        "kind": "private",
+        "default": true
+      }
+    ]
   }
 ]

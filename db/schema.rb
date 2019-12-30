@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_27_164620) do
+ActiveRecord::Schema.define(version: 2019_12_30_182609) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "first_name"
@@ -18,4 +18,13 @@ ActiveRecord::Schema.define(version: 2019_12_27_164620) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "emails", force: :cascade do |t|
+    t.string "account"
+    t.string "kind"
+    t.boolean "default"
+    t.integer "contact_id", null: false
+    t.index ["contact_id"], name: "index_emails_on_contact_id"
+  end
+
+  add_foreign_key "emails", "contacts"
 end
