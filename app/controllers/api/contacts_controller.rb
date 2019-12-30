@@ -29,6 +29,16 @@ class Api::ContactsController < ApplicationController
     end
   end
 
+  def destroy
+    @contact = Contact.find(params[:id])
+
+    if @contact.destroy
+    else
+      render error: {error: 'Unable to delete contact'}
+    end
+  end
+
+
 
   private
 
