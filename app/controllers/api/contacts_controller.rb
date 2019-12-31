@@ -43,7 +43,7 @@ class Api::ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:first_name)
+    params.require(:contact).permit(:first_name, :last_name)
   end
 
 

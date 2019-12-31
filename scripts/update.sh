@@ -9,7 +9,8 @@ curl --verbose \
 	--header "Content-Type: application/json" \
 	--data '{
 		"contact": {
-			"first_name": "Emily"
+			"first_name": "Emily",
+			"last_name": "Van"
 		}
 	}' \
-http://localhost:3000/api/contacts/5
+http://localhost:3000/api/contacts/52
