@@ -11,7 +11,7 @@ Contact.delete_all
 hash = ActiveSupport::JSON.decode(File.read('db/seeds/contacts.json'))
 
 hash.each do |contact_entry|
-  contact = Contact.create!("first_name": contact_entry["first_name"])
+  contact = Contact.create!("first_name": contact_entry["first_name"], "last_name": contact_entry["last_name"])
 
   contact_entry['emails'].each do |email_entry|
     contact.emails.create!(email_entry)
