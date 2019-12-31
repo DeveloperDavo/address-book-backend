@@ -1,3 +1,3 @@
 class Contact < ApplicationRecord
-  has_many :emails
+  has_many :emails, dependent: :destroy
 end
