@@ -1,6 +1,7 @@
 [
   {
     "first_name": "Alice",
+    "last_name": "Zen",
     "emails": [
       {
         "account": "alice_work@mail.com",
@@ -16,6 +17,7 @@
   },
   {
     "first_name": "Bob",
+    "last_name": "Yu",
     "emails": [
       {
         "account": "bob@mail.com",
