@@ -13,7 +13,7 @@ class Api::ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      render json: @contact
+      render json: @contact, status: 201
     else
       render error: {error: 'Unable to create contact'}
     end

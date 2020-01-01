@@ -16,3 +16,15 @@ RSpec.describe 'GET /api/contacts' do
     expect(body[0]['last_name']).to eq(anna.last_name)
   end
 end
+
+RSpec.describe 'POST /api/contacts' do
+  it 'creates a contact' do
+    contact_params = attributes_for(:contact, first_name: 'Cameron', last_name: 'C')
+
+    post '/api/contacts', params: {contact: contact_params}
+
+    expect(response.status).to eq 201
+    expect(Contact.last.first_name).to eq contact_params[:first_name]
+  end
+end
+
