@@ -7,7 +7,7 @@ RSpec.describe 'GET /api/contacts' do
     anna = create(:contact, first_name: 'Anna', last_name: 'A')
     create(:contact, first_name: 'Boris', last_name: 'B')
 
-    get '/api/contacts'
+    get api_contacts_url
 
     body = JSON.parse(@response.body)
     expect(body.count).to eq(2)
@@ -21,7 +21,7 @@ RSpec.describe 'POST /api/contacts' do
   it 'creates a contact' do
     contact_params = attributes_for(:contact, first_name: 'Cameron', last_name: 'C')
 
-    post '/api/contacts', params: {contact: contact_params}
+    post api_contacts_url, params: {contact: contact_params}
 
     expect(response.status).to eq 201
     expect(Contact.last.first_name).to eq contact_params[:first_name]
