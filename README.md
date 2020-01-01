@@ -6,3 +6,6 @@
 - `rails db:seed`
 - `rails server`
 - run create, update and destroy scripts eg. `./create.sh`
+
+## Tests
+- Run all with `bundle exec rspec`
