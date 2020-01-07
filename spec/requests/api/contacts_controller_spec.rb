@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe ContactsController do
+describe Api::ContactsController do
   it 'returns a list of all contacts' do
     anna = create(:contact, first_name: 'Anna', last_name: 'A')
     create(:contact, first_name: 'Boris', last_name: 'B')
