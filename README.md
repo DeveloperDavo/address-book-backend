@@ -7,5 +7,6 @@
 - `rails server` or `rails server --binding 0.0.0.0`
 - run create, update and destroy scripts eg. `./create.sh`
 
-## Tests
-- Run all with `bundle exec rspec`
+## Linting and Testing
+
+- See go script
