@@ -21,9 +21,7 @@ describe Api::ContactsController do
 
       get api_contacts_url
 
-      body = JSON.parse(response.body)
-
-      first_entry = body.first
+      first_entry = JSON.parse(response.body).first
       expect(first_entry['id']).to eq(anna.id)
       expect(first_entry['first_name']).to eq(anna.first_name)
       expect(first_entry['last_name']).to eq(anna.last_name)
