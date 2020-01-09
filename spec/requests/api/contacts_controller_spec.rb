@@ -40,7 +40,11 @@ describe Api::ContactsController do
       post api_contacts_url, params: { contact: contact_params }
 
       expect(response.status).to eq 201
-      expect(Contact.last.first_name).to eq contact_params[:first_name]
+
+      body = JSON.parse(response.body)
+      expect(body['first_name']).to eq contact_params[:first_name]
+      expect(body.key?('created_at')).to eq(false)
+      expect(body.key?('update_at')).to eq(false)
     end
   end
 

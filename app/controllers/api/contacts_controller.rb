@@ -14,7 +14,7 @@ module Api
       @contact = Contact.new(contact_params)
 
       if @contact.save
-        render json: @contact, status: 201
+        render_contact(status: 201)
       else
         render error: { error: 'Unable to create contact' }
       end
@@ -45,8 +45,8 @@ module Api
       params.require(:contact).permit(:first_name, :last_name)
     end
 
-    def render_contact
-      render json: @contact, except: %i[created_at updated_at], include: [:emails]
+    def render_contact(status: 200)
+      render json: @contact, except: %i[created_at updated_at], include: [:emails], status: status
     end
 
     def render_contacts
