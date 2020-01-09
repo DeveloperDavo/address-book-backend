@@ -10,11 +10,15 @@ describe Api::ContactsController do
 
       get api_contacts_url
 
+      expect(response.status).to eq 200
+
       body = JSON.parse(response.body)
       expect(body.count).to eq(2)
-      expect(body[0]['id']).to eq(anna.id)
-      expect(body[0]['first_name']).to eq(anna.first_name)
-      expect(body[0]['last_name']).to eq(anna.last_name)
+
+      first_entry = body.first
+      expect(first_entry['id']).to eq(anna.id)
+      expect(first_entry['first_name']).to eq(anna.first_name)
+      expect(first_entry['last_name']).to eq(anna.last_name)
     end
   end
 
