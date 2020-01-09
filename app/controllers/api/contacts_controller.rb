@@ -52,6 +52,5 @@ module Api
     def render_contacts
       render json: @contacts, except: %i[created_at updated_at]
     end
-
   end
 end

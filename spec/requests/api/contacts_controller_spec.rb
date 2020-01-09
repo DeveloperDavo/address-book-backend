@@ -45,7 +45,6 @@ describe Api::ContactsController do
       expect(body['id']).to eq(anna.id)
       expect(body['first_name']).to eq(anna.first_name)
       expect(body['last_name']).to eq(anna.last_name)
-
     end
   end
 end
