@@ -8,6 +8,10 @@ goal_test() {
   bundle exec rspec
 }
 
+goal_precommit() {
+  ./go lint && ./go test
+}
+
 goal_help() {
   echo "usage: $0 <goal>
 
