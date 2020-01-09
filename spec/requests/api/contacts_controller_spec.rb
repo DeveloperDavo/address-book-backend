@@ -62,4 +62,18 @@ describe Api::ContactsController do
       expect(body.key?('update_at')).to eq(false)
     end
   end
+
+  describe '#destroy' do
+    it 'destroys a contact' do
+      anna = create(:contact, first_name: 'Anna', last_name: 'A')
+      create(:contact, first_name: 'Boris', last_name: 'B')
+
+      expect(Contact.count).to eq(2)
+      delete "/api/contacts/#{anna['id']}"
+
+      expect(response.status).to eq 204
+
+      expect(Contact.count).to eq(1)
+    end
+  end
 end
