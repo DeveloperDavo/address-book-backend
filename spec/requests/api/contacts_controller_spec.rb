@@ -32,5 +32,21 @@ describe Api::ContactsController do
       expect(Contact.last.first_name).to eq contact_params[:first_name]
     end
   end
+
+  describe '#show' do
+    it 'displays a contact' do
+      anna = create(:contact, first_name: 'Anna', last_name: 'A')
+
+      get "/api/contacts/#{anna['id']}"
+
+      expect(response.status).to eq 200
+
+      body = JSON.parse(response.body)
+      expect(body['id']).to eq(anna.id)
+      expect(body['first_name']).to eq(anna.first_name)
+      expect(body['last_name']).to eq(anna.last_name)
+
+    end
+  end
 end
 
