@@ -40,3 +40,10 @@ Style/FrozenStringLiteralComment:
 
 Layout/TrailingEmptyLines:
   Enabled: false
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Layout/EmptyLines:
+  Enabled: false
+
